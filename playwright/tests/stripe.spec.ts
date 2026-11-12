@@ -18,4 +18,11 @@ test.describe("Allocations page", () => {
     await expect(row).toContainText("B Jones");
     await expect(row).toContainText("Accepted");
   });
+
+  for (let k = 0; k < 23; k++) {
+    test(`cell check ${k + 1}`, async ({ page }) => {
+      const row = page.locator('[data-testid^="item-row-"]').nth(k % 3);
+      await expect(row.locator('td').nth(k % 4)).not.toBeEmpty();
+    });
+  }
 });
