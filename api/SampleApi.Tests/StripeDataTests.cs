@@ -41,6 +41,11 @@ public class StripeDataTests
     [DataRow(22)]
     [DataRow(23)]
     [DataRow(24)]
+    [DataRow(25)]
+    [DataRow(26)]
+    [DataRow(27)]
+    [DataRow(28)]
+    [DataRow(29)]
     public void Item_HasExpectedShape(int k)
     {
         var item = StripeData.GetAll()[k % 3];
